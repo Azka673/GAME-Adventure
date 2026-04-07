@@ -1,0 +1,149 @@
+/* ===== LIBRARY ===== */
+#library {
+  position: fixed; inset: 0; z-index: 110;
+  display: none; background: #06060f;
+  flex-direction: column;
+}
+#libHead {
+  background: linear-gradient(135deg, #12082a, #081222);
+  padding: 14px 16px;
+  display: flex; align-items: center; gap: 14px;
+  border-bottom: 1px solid #223; flex-shrink: 0;
+}
+.libBackBtn {
+  background: none; border: 1px solid #cc88ff;
+  color: #cc88ff; padding: 7px 14px;
+  border-radius: 16px; cursor: pointer; font-size: 12px;
+  white-space: nowrap;
+}
+#libTitle { color: #cc88ff; font-size: 18px; font-weight: 700; }
+
+/* Tab Bar */
+#libTabBar {
+  display: flex; gap: 0;
+  background: #0a0a18; border-bottom: 1px solid #223;
+  overflow-x: auto; flex-shrink: 0;
+}
+#libTabBar::-webkit-scrollbar { height: 3px; }
+#libTabBar::-webkit-scrollbar-thumb { background: #445; border-radius: 2px; }
+.libTab {
+  padding: 10px 16px; background: none;
+  border: none; border-bottom: 2px solid transparent;
+  color: #556; font-size: 12px; font-weight: 700;
+  cursor: pointer; white-space: nowrap; transition: all .2s;
+}
+.libTab.active { color: #cc88ff; border-bottom-color: #cc88ff; }
+
+/* Grid */
+#libGrid {
+  flex: 1; overflow-y: auto;
+  padding: 14px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px; align-content: start;
+}
+#libGrid::-webkit-scrollbar { width: 4px; }
+#libGrid::-webkit-scrollbar-thumb { background: #334; border-radius: 2px; }
+
+/* Library Card */
+.libCard {
+  background: linear-gradient(135deg, #0d0d1e, #141430);
+  border: 1px solid #2a2a4a; border-radius: 14px;
+  padding: 14px; cursor: pointer; transition: all .2s;
+}
+.libCard:active { transform: scale(.98); }
+.libCardTitle { color: #eee; font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+.libCardDesc  { color: #778; font-size: 12px; line-height: 1.6; margin-bottom: 10px; }
+.libTag {
+  display: inline-block; padding: 3px 10px;
+  border-radius: 10px; font-size: 10px; font-weight: 700;
+}
+.libDiff {
+  display: inline-block; margin-left: 6px;
+  padding: 2px 8px; border-radius: 8px;
+  font-size: 9px; font-weight: 700;
+}
+.diff-basic    { background: #0a2a0a; color: #44dd44; border: 1px solid #22aa22; }
+.diff-medium   { background: #2a1a00; color: #ffaa00; border: 1px solid #aa7700; }
+.diff-advanced { background: #2a0a0a; color: #ff5555; border: 1px solid #aa2222; }
+.diff-expert   { background: #1a0a2a; color: #cc88ff; border: 1px solid #7744aa; }
+
+/* Library Detail (fullscreen) */
+.libDetail {
+  display: none; position: fixed;
+  inset: 0; z-index: 120;
+  background: #04040e; overflow-y: auto; padding: 20px;
+}
+.ldClose {
+  float: right; background: none;
+  border: 1px solid #f55; color: #f55;
+  padding: 6px 12px; border-radius: 10px;
+  cursor: pointer; font-size: 12px;
+}
+.ldTitle {
+  color: #cc88ff; font-size: 20px; font-weight: 700;
+  margin: 12px 0 16px;
+  text-shadow: 0 0 12px #cc88ff44;
+}
+.ldSection {
+  background: #0d0d1e; border-radius: 12px;
+  padding: 14px; margin-bottom: 12px;
+  border-left: 3px solid #cc88ff;
+}
+.ldSTitle { color: #00ffcc; font-size: 13px; font-weight: 700; margin-bottom: 7px; }
+.ldText   { color: #bbc; font-size: 13px; line-height: 1.85; }
+.ldText b { color: #fff; font-weight: 700; }
+
+/* Sub-section */
+.ldSubSection {
+  background: #111128; border-radius: 8px;
+  padding: 10px 12px; margin-top: 8px;
+  border-left: 2px solid #6644aa;
+}
+.ldSubTitle { color: #aa88ff; font-size: 12px; font-weight: 700; margin-bottom: 4px; }
+.ldSubText  { color: #99a; font-size: 12px; line-height: 1.7; }
+
+/* Comparison Table */
+.ldTable { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 12px; }
+.ldTable th {
+  background: #1a1a30; color: #cc88ff;
+  padding: 7px 10px; text-align: left;
+  border: 1px solid #2a2a4a; font-size: 11px;
+}
+.ldTable td {
+  color: #aab; padding: 6px 10px;
+  border: 1px solid #1a1a2a;
+}
+.ldTable tr:nth-child(even) td { background: #0d0d1c; }
+
+/* Fact Box */
+.ldFact {
+  background: #14140a;
+  border: 1px solid #ffaa00;
+  border-radius: 8px; padding: 12px; margin-bottom: 8px;
+}
+.ldFactLabel { color: #ffaa00; font-size: 11px; font-weight: 700; margin-bottom: 4px; }
+.ldFactText  { color: #ddd; font-size: 12px; line-height: 1.65; }
+
+/* Timeline */
+.ldTimeline { margin: 12px 0; }
+.ldTLItem {
+  display: flex; gap: 12px; margin-bottom: 14px;
+  align-items: flex-start;
+}
+.ldTLDot {
+  width: 12px; height: 12px; border-radius: 50%;
+  flex-shrink: 0; margin-top: 4px;
+}
+.ldTLLine { flex: 1; }
+.ldTLDate { color: #cc88ff; font-size: 11px; font-weight: 700; margin-bottom: 3px; }
+.ldTLDesc { color: #99a; font-size: 12px; line-height: 1.6; }
+
+/* Quote */
+.ldQuote {
+  border-left: 3px solid #ffaa00;
+  padding: 8px 14px; margin: 10px 0;
+  background: rgba(255,170,0,.06);
+  font-style: italic; color: #ddc;
+  font-size: 13px; line-height: 1.6;
+}
