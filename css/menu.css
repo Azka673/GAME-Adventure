@@ -1,0 +1,145 @@
+/* ===== MAIN MENU ===== */
+#mainMenu {
+  position: fixed; inset: 0; z-index: 100;
+  display: none; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 14px; overflow: hidden;
+}
+#menuBg {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 40%, #0d1f3c 0%, #0a1a0a 55%, #000 100%);
+}
+.menuParticle {
+  position: absolute; border-radius: 50%;
+  pointer-events: none;
+  animation: mFloat 8s ease-in-out infinite alternate;
+}
+@keyframes mFloat {
+  0%   { transform: translateY(0) scale(1); opacity:.6; }
+  100% { transform: translateY(-35px) scale(1.6); opacity:.1; }
+}
+#menuContent { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+#menuTitle {
+  font-size: clamp(24px, 6vw, 54px);
+  font-weight: 900; color: #fff;
+  text-shadow: 0 0 30px #00ffcc, 0 0 60px #0088ff;
+  letter-spacing: 4px; text-align: center;
+}
+#menuSub { color: #7ac; font-size: 13px; letter-spacing: 3px; margin-bottom: 6px; text-align: center; }
+.mBtn {
+  padding: 13px 44px; border: 2px solid;
+  border-radius: 30px; font-size: 15px; font-weight: 700;
+  cursor: pointer; letter-spacing: 1px;
+  min-width: 230px; text-align: center;
+  transition: all .22s; background: transparent;
+}
+.mBtn:active { transform: scale(.95); }
+.mBtn.primary  { border-color: #00ffcc; color: #00ffcc; box-shadow: 0 0 18px #00ffcc33; }
+.mBtn.secondary{ border-color: #ffaa00; color: #ffaa00; box-shadow: 0 0 18px #ffaa0033; }
+.mBtn.tertiary { border-color: #cc88ff; color: #cc88ff; box-shadow: 0 0 18px #cc88ff33; }
+.mBtn.danger   { border-color: #ff7766; color: #ff7766; }
+#menuVer { color: #334; font-size: 11px; margin-top: 10px; }
+
+/* ===== MODE SELECT ===== */
+#modeSelect {
+  position: fixed; inset: 0; z-index: 101;
+  background: rgba(0,0,0,.95);
+  display: none; align-items: center; justify-content: center;
+}
+.modeBox {
+  background: linear-gradient(135deg, #0e0e1e, #151520);
+  border: 2px solid #00ffcc;
+  border-radius: 20px;
+  padding: 32px;
+  width: 92%;
+  max-width: 520px;
+  box-shadow: 0 0 50px rgba(0,255,200,.2);
+}
+.modeTitle {
+  color: #00ffcc;
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 8px;
+  letter-spacing: 2px;
+}
+.modeDesc {
+  color: #bcd;
+  font-size: 12px;
+  text-align: center;
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+.modeCard {
+  width: 100%;
+  padding: 18px;
+  margin-bottom: 14px;
+  border-radius: 14px;
+  border: 2px solid;
+  background: rgba(0,0,0,.3);
+  cursor: pointer;
+  transition: all .25s;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: inherit;
+}
+.modeCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,255,200,.15);
+}
+.modeCard.normal {
+  border-color: #00ffcc;
+  background: rgba(0,255,200,.06);
+}
+.modeCard.normal:hover {
+  background: rgba(0,255,200,.12);
+}
+.modeCard.challenge {
+  border-color: #ff6666;
+  background: rgba(255,100,100,.06);
+}
+.modeCard.challenge:hover {
+  background: rgba(255,100,100,.12);
+}
+.modeCardTitle {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.modeCardIcon {
+  font-size: 44px;
+  min-width: 50px;
+  text-align: center;
+}
+.modeCardInfo {
+  flex: 1;
+}
+.modeCardName {
+  color: #00ffcc;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.modeCardDesc {
+  color: #8899aa;
+  font-size: 11px;
+  line-height: 1.5;
+}
+.modeBackBtn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 14px;
+  background: rgba(0,255,200,.08);
+  border: 1px solid #00ffcc;
+  border-radius: 10px;
+  color: #00ffcc;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: .2s;
+}
+.modeBackBtn:hover {
+  background: rgba(0,255,200,.15);
+}
